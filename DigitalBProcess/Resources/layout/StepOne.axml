@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:padding="24dp">
+<!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainWifiLayout"
+        android:orientation="vertical"
+        android:layout_weight="1">-->
+    <TextView
+        android:text="Select your wifi connection"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtInternetCheck"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp" />
+    <TextView
+        android:id="@+id/wifiName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:visibility="invisible" />
+    <EditText
+        android:id="@+id/wifiPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:visibility="invisible" />
+    <Button
+        android:id="@+id/wifiConnBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#333333"
+        android:textColor="#ffffff"
+        android:text="Connect To Wifi"
+        android:visibility="invisible" />
+    <Button
+        android:id="@+id/stepTwoBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#61B26B"
+        android:textColor="#FFFFFF"
+        android:text="Go To Activation"
+        android:visibility="invisible" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/listView1" />
+</LinearLayout>

@@ -1,0 +1,2350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Update_Device_Info">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TeamViewerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Device_InfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRemaininglicenses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemaininglicensesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRemaininglicensesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTotalLicenses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTotalLicensesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTotalLicensesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIsForceWindowsUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIsForceWindowsUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetIsForceWindowsUpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWindowsUpdateStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWindowsUpdateStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWindowsUpdateStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOSDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OSFullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OSMinorVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FreeSpaceMB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOSDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetOSDetailsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="check_lid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="check_lidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="check_lidResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateVersionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Is_ActivationCodeInUse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Is_ActivationCodeInUseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_ActivationCodeInUseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OverrideActivationCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OverrideActivationCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OverrideActivationCodeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="set_lid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="set_lidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="set_lidResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="download_complete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thetype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="theid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filesize" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="download_completeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="download_completeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="download_complete_NO_BandwidthUsage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thetype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="theid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filesize" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="download_complete_NO_BandwidthUsageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="download_complete_NO_BandwidthUsageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_xml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialnum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_xmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_xmlResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAppVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serialnum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAppVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentAppVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAppDownloadLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serialnum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAppDownloadLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentAppDownloadLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInstallerLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serialnum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInstallerLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInstallerLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDateModified">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDateModifiedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDateModifiedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeviceName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeviceNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeviceNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpirationDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpirationDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExpirationDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDateModified">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="datemodified" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDateModifiedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDateModifiedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDeviceTimeZone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="timezone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDeviceTimeZoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDeviceTimeZoneResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetContactInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogAzureRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogAzureRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogAzureRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogAppRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TeamviewerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MacAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogAppRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogAppRequestResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLocalContents_Gen2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLocalContents_Gen2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLocalContents_Gen2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultContent">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDefaultContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDefaultContentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleDay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="time" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleDayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleDayResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Update_Device_InfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Device_Info" />
+  </wsdl:message>
+  <wsdl:message name="Update_Device_InfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Device_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRemaininglicensesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRemaininglicenses" />
+  </wsdl:message>
+  <wsdl:message name="GetRemaininglicensesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRemaininglicensesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalLicensesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTotalLicenses" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalLicensesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTotalLicensesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIsForceWindowsUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIsForceWindowsUpdate" />
+  </wsdl:message>
+  <wsdl:message name="GetIsForceWindowsUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIsForceWindowsUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsUpdateStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWindowsUpdateStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsUpdateStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWindowsUpdateStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetOSDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:SetOSDetails" />
+  </wsdl:message>
+  <wsdl:message name="SetOSDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:SetOSDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="check_lidSoapIn">
+    <wsdl:part name="parameters" element="tns:check_lid" />
+  </wsdl:message>
+  <wsdl:message name="check_lidSoapOut">
+    <wsdl:part name="parameters" element="tns:check_lidResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateVersion" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Is_ActivationCodeInUseSoapIn">
+    <wsdl:part name="parameters" element="tns:Is_ActivationCodeInUse" />
+  </wsdl:message>
+  <wsdl:message name="Is_ActivationCodeInUseSoapOut">
+    <wsdl:part name="parameters" element="tns:Is_ActivationCodeInUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="OverrideActivationCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:OverrideActivationCode" />
+  </wsdl:message>
+  <wsdl:message name="OverrideActivationCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:OverrideActivationCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="set_lidSoapIn">
+    <wsdl:part name="parameters" element="tns:set_lid" />
+  </wsdl:message>
+  <wsdl:message name="set_lidSoapOut">
+    <wsdl:part name="parameters" element="tns:set_lidResponse" />
+  </wsdl:message>
+  <wsdl:message name="download_completeSoapIn">
+    <wsdl:part name="parameters" element="tns:download_complete" />
+  </wsdl:message>
+  <wsdl:message name="download_completeSoapOut">
+    <wsdl:part name="parameters" element="tns:download_completeResponse" />
+  </wsdl:message>
+  <wsdl:message name="download_complete_NO_BandwidthUsageSoapIn">
+    <wsdl:part name="parameters" element="tns:download_complete_NO_BandwidthUsage" />
+  </wsdl:message>
+  <wsdl:message name="download_complete_NO_BandwidthUsageSoapOut">
+    <wsdl:part name="parameters" element="tns:download_complete_NO_BandwidthUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_xmlSoapIn">
+    <wsdl:part name="parameters" element="tns:get_xml" />
+  </wsdl:message>
+  <wsdl:message name="get_xmlSoapOut">
+    <wsdl:part name="parameters" element="tns:get_xmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentAppVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentAppVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppDownloadLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentAppDownloadLink" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppDownloadLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentAppDownloadLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInstallerLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInstallerLink" />
+  </wsdl:message>
+  <wsdl:message name="GetInstallerLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInstallerLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDateModifiedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDateModified" />
+  </wsdl:message>
+  <wsdl:message name="GetDateModifiedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDateModifiedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeviceNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeviceName" />
+  </wsdl:message>
+  <wsdl:message name="GetDeviceNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeviceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExpirationDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExpirationDate" />
+  </wsdl:message>
+  <wsdl:message name="GetExpirationDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExpirationDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDateModifiedSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDateModified" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDateModifiedSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDateModifiedResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceTimeZoneSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDeviceTimeZone" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceTimeZoneSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDeviceTimeZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContactInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogAzureRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:LogAzureRequest" />
+  </wsdl:message>
+  <wsdl:message name="LogAzureRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:LogAzureRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogAppRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:LogAppRequest" />
+  </wsdl:message>
+  <wsdl:message name="LogAppRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:LogAppRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLocalContents_Gen2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetLocalContents_Gen2" />
+  </wsdl:message>
+  <wsdl:message name="GetLocalContents_Gen2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetLocalContents_Gen2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultContentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDefaultContent" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultContentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDefaultContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleDaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleDay" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleDaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_Device_InfoHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="lid" type="s:string" />
+    <wsdl:part name="MachineID" type="s:string" />
+    <wsdl:part name="TeamViewerID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Update_Device_InfoHttpGetOut" />
+  <wsdl:message name="GetRemaininglicensesHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRemaininglicensesHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalLicensesHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalLicensesHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetIsForceWindowsUpdateHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIsForceWindowsUpdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsUpdateStatusHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsUpdateStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetOSDetailsHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="OSFullName" type="s:string" />
+    <wsdl:part name="OSMinorVersion" type="s:string" />
+    <wsdl:part name="FreeSpaceMB" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetOSDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="check_lidHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="lid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="check_lidHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVersionHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="Version" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVersionHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="Is_ActivationCodeInUseHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Is_ActivationCodeInUseHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="OverrideActivationCodeHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OverrideActivationCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="set_lidHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="lid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="set_lidHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="download_completeHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="lid" type="s:string" />
+    <wsdl:part name="thetype" type="s:string" />
+    <wsdl:part name="theid" type="s:string" />
+    <wsdl:part name="filename" type="s:string" />
+    <wsdl:part name="filesize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="download_completeHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="download_complete_NO_BandwidthUsageHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="lid" type="s:string" />
+    <wsdl:part name="thetype" type="s:string" />
+    <wsdl:part name="theid" type="s:string" />
+    <wsdl:part name="filename" type="s:string" />
+    <wsdl:part name="filesize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="download_complete_NO_BandwidthUsageHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="get_xmlHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="serialnum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_xmlHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppVersionHttpGetIn">
+    <wsdl:part name="serialnum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppVersionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppDownloadLinkHttpGetIn">
+    <wsdl:part name="serialnum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppDownloadLinkHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInstallerLinkHttpGetIn">
+    <wsdl:part name="serialnum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInstallerLinkHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDateModifiedHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDateModifiedHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeviceNameHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeviceNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExpirationDateHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExpirationDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDateModifiedHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="datemodified" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDateModifiedHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceTimeZoneHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="timezone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceTimeZoneHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetContactInfoHttpGetIn" />
+  <wsdl:message name="GetContactInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LogAppRequestHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="TeamviewerId" type="s:string" />
+    <wsdl:part name="IP" type="s:string" />
+    <wsdl:part name="AppVersion" type="s:string" />
+    <wsdl:part name="MacAddress" type="s:string" />
+    <wsdl:part name="Action" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogAppRequestHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetLocalContents_Gen2HttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLocalContents_Gen2HttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultContentHttpGetIn" />
+  <wsdl:message name="GetDefaultContentHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleDayHttpGetIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="time" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleDayHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Update_Device_InfoHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="lid" type="s:string" />
+    <wsdl:part name="MachineID" type="s:string" />
+    <wsdl:part name="TeamViewerID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Update_Device_InfoHttpPostOut" />
+  <wsdl:message name="GetRemaininglicensesHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRemaininglicensesHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalLicensesHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTotalLicensesHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetIsForceWindowsUpdateHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIsForceWindowsUpdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsUpdateStatusHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWindowsUpdateStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetOSDetailsHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="OSFullName" type="s:string" />
+    <wsdl:part name="OSMinorVersion" type="s:string" />
+    <wsdl:part name="FreeSpaceMB" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetOSDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="check_lidHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="lid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="check_lidHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVersionHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="Version" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVersionHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="Is_ActivationCodeInUseHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Is_ActivationCodeInUseHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="OverrideActivationCodeHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OverrideActivationCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="set_lidHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="lid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="set_lidHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="download_completeHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="lid" type="s:string" />
+    <wsdl:part name="thetype" type="s:string" />
+    <wsdl:part name="theid" type="s:string" />
+    <wsdl:part name="filename" type="s:string" />
+    <wsdl:part name="filesize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="download_completeHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="download_complete_NO_BandwidthUsageHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="lid" type="s:string" />
+    <wsdl:part name="thetype" type="s:string" />
+    <wsdl:part name="theid" type="s:string" />
+    <wsdl:part name="filename" type="s:string" />
+    <wsdl:part name="filesize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="download_complete_NO_BandwidthUsageHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="get_xmlHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="serialnum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_xmlHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppVersionHttpPostIn">
+    <wsdl:part name="serialnum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppVersionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppDownloadLinkHttpPostIn">
+    <wsdl:part name="serialnum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAppDownloadLinkHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInstallerLinkHttpPostIn">
+    <wsdl:part name="serialnum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInstallerLinkHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDateModifiedHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDateModifiedHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeviceNameHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeviceNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExpirationDateHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExpirationDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDateModifiedHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="datemodified" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDateModifiedHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceTimeZoneHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="timezone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceTimeZoneHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetContactInfoHttpPostIn" />
+  <wsdl:message name="GetContactInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LogAppRequestHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="TeamviewerId" type="s:string" />
+    <wsdl:part name="IP" type="s:string" />
+    <wsdl:part name="AppVersion" type="s:string" />
+    <wsdl:part name="MacAddress" type="s:string" />
+    <wsdl:part name="Action" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogAppRequestHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetLocalContents_Gen2HttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLocalContents_Gen2HttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultContentHttpPostIn" />
+  <wsdl:message name="GetDefaultContentHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleDayHttpPostIn">
+    <wsdl:part name="aid" type="s:string" />
+    <wsdl:part name="time" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleDayHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:portType name="web_serviceSoap">
+    <wsdl:operation name="Update_Device_Info">
+      <wsdl:input message="tns:Update_Device_InfoSoapIn" />
+      <wsdl:output message="tns:Update_Device_InfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemaininglicenses">
+      <wsdl:input message="tns:GetRemaininglicensesSoapIn" />
+      <wsdl:output message="tns:GetRemaininglicensesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalLicenses">
+      <wsdl:input message="tns:GetTotalLicensesSoapIn" />
+      <wsdl:output message="tns:GetTotalLicensesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsForceWindowsUpdate">
+      <wsdl:input message="tns:GetIsForceWindowsUpdateSoapIn" />
+      <wsdl:output message="tns:GetIsForceWindowsUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsUpdateStatus">
+      <wsdl:input message="tns:GetWindowsUpdateStatusSoapIn" />
+      <wsdl:output message="tns:GetWindowsUpdateStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOSDetails">
+      <wsdl:input message="tns:SetOSDetailsSoapIn" />
+      <wsdl:output message="tns:SetOSDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="check_lid">
+      <wsdl:input message="tns:check_lidSoapIn" />
+      <wsdl:output message="tns:check_lidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVersion">
+      <wsdl:input message="tns:UpdateVersionSoapIn" />
+      <wsdl:output message="tns:UpdateVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Is_ActivationCodeInUse">
+      <wsdl:input message="tns:Is_ActivationCodeInUseSoapIn" />
+      <wsdl:output message="tns:Is_ActivationCodeInUseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OverrideActivationCode">
+      <wsdl:input message="tns:OverrideActivationCodeSoapIn" />
+      <wsdl:output message="tns:OverrideActivationCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="set_lid">
+      <wsdl:input message="tns:set_lidSoapIn" />
+      <wsdl:output message="tns:set_lidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="download_complete">
+      <wsdl:input message="tns:download_completeSoapIn" />
+      <wsdl:output message="tns:download_completeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="download_complete_NO_BandwidthUsage">
+      <wsdl:input message="tns:download_complete_NO_BandwidthUsageSoapIn" />
+      <wsdl:output message="tns:download_complete_NO_BandwidthUsageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_xml">
+      <wsdl:input message="tns:get_xmlSoapIn" />
+      <wsdl:output message="tns:get_xmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppVersion">
+      <wsdl:input message="tns:GetCurrentAppVersionSoapIn" />
+      <wsdl:output message="tns:GetCurrentAppVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppDownloadLink">
+      <wsdl:input message="tns:GetCurrentAppDownloadLinkSoapIn" />
+      <wsdl:output message="tns:GetCurrentAppDownloadLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerLink">
+      <wsdl:input message="tns:GetInstallerLinkSoapIn" />
+      <wsdl:output message="tns:GetInstallerLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateModified">
+      <wsdl:input message="tns:GetDateModifiedSoapIn" />
+      <wsdl:output message="tns:GetDateModifiedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceName">
+      <wsdl:input message="tns:GetDeviceNameSoapIn" />
+      <wsdl:output message="tns:GetDeviceNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpirationDate">
+      <wsdl:input message="tns:GetExpirationDateSoapIn" />
+      <wsdl:output message="tns:GetExpirationDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDateModified">
+      <wsdl:input message="tns:UpdateDateModifiedSoapIn" />
+      <wsdl:output message="tns:UpdateDateModifiedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceTimeZone">
+      <wsdl:input message="tns:UpdateDeviceTimeZoneSoapIn" />
+      <wsdl:output message="tns:UpdateDeviceTimeZoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactInfo">
+      <wsdl:input message="tns:GetContactInfoSoapIn" />
+      <wsdl:output message="tns:GetContactInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogAzureRequest">
+      <wsdl:input message="tns:LogAzureRequestSoapIn" />
+      <wsdl:output message="tns:LogAzureRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogAppRequest">
+      <wsdl:input message="tns:LogAppRequestSoapIn" />
+      <wsdl:output message="tns:LogAppRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalContents_Gen2">
+      <wsdl:input message="tns:GetLocalContents_Gen2SoapIn" />
+      <wsdl:output message="tns:GetLocalContents_Gen2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultContent">
+      <wsdl:input message="tns:GetDefaultContentSoapIn" />
+      <wsdl:output message="tns:GetDefaultContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleDay">
+      <wsdl:input message="tns:GetScheduleDaySoapIn" />
+      <wsdl:output message="tns:GetScheduleDaySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="web_serviceHttpGet">
+    <wsdl:operation name="Update_Device_Info">
+      <wsdl:input message="tns:Update_Device_InfoHttpGetIn" />
+      <wsdl:output message="tns:Update_Device_InfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemaininglicenses">
+      <wsdl:input message="tns:GetRemaininglicensesHttpGetIn" />
+      <wsdl:output message="tns:GetRemaininglicensesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalLicenses">
+      <wsdl:input message="tns:GetTotalLicensesHttpGetIn" />
+      <wsdl:output message="tns:GetTotalLicensesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsForceWindowsUpdate">
+      <wsdl:input message="tns:GetIsForceWindowsUpdateHttpGetIn" />
+      <wsdl:output message="tns:GetIsForceWindowsUpdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsUpdateStatus">
+      <wsdl:input message="tns:GetWindowsUpdateStatusHttpGetIn" />
+      <wsdl:output message="tns:GetWindowsUpdateStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOSDetails">
+      <wsdl:input message="tns:SetOSDetailsHttpGetIn" />
+      <wsdl:output message="tns:SetOSDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="check_lid">
+      <wsdl:input message="tns:check_lidHttpGetIn" />
+      <wsdl:output message="tns:check_lidHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVersion">
+      <wsdl:input message="tns:UpdateVersionHttpGetIn" />
+      <wsdl:output message="tns:UpdateVersionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Is_ActivationCodeInUse">
+      <wsdl:input message="tns:Is_ActivationCodeInUseHttpGetIn" />
+      <wsdl:output message="tns:Is_ActivationCodeInUseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OverrideActivationCode">
+      <wsdl:input message="tns:OverrideActivationCodeHttpGetIn" />
+      <wsdl:output message="tns:OverrideActivationCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="set_lid">
+      <wsdl:input message="tns:set_lidHttpGetIn" />
+      <wsdl:output message="tns:set_lidHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="download_complete">
+      <wsdl:input message="tns:download_completeHttpGetIn" />
+      <wsdl:output message="tns:download_completeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="download_complete_NO_BandwidthUsage">
+      <wsdl:input message="tns:download_complete_NO_BandwidthUsageHttpGetIn" />
+      <wsdl:output message="tns:download_complete_NO_BandwidthUsageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_xml">
+      <wsdl:input message="tns:get_xmlHttpGetIn" />
+      <wsdl:output message="tns:get_xmlHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppVersion">
+      <wsdl:input message="tns:GetCurrentAppVersionHttpGetIn" />
+      <wsdl:output message="tns:GetCurrentAppVersionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppDownloadLink">
+      <wsdl:input message="tns:GetCurrentAppDownloadLinkHttpGetIn" />
+      <wsdl:output message="tns:GetCurrentAppDownloadLinkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerLink">
+      <wsdl:input message="tns:GetInstallerLinkHttpGetIn" />
+      <wsdl:output message="tns:GetInstallerLinkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateModified">
+      <wsdl:input message="tns:GetDateModifiedHttpGetIn" />
+      <wsdl:output message="tns:GetDateModifiedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceName">
+      <wsdl:input message="tns:GetDeviceNameHttpGetIn" />
+      <wsdl:output message="tns:GetDeviceNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpirationDate">
+      <wsdl:input message="tns:GetExpirationDateHttpGetIn" />
+      <wsdl:output message="tns:GetExpirationDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDateModified">
+      <wsdl:input message="tns:UpdateDateModifiedHttpGetIn" />
+      <wsdl:output message="tns:UpdateDateModifiedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceTimeZone">
+      <wsdl:input message="tns:UpdateDeviceTimeZoneHttpGetIn" />
+      <wsdl:output message="tns:UpdateDeviceTimeZoneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactInfo">
+      <wsdl:input message="tns:GetContactInfoHttpGetIn" />
+      <wsdl:output message="tns:GetContactInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogAppRequest">
+      <wsdl:input message="tns:LogAppRequestHttpGetIn" />
+      <wsdl:output message="tns:LogAppRequestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalContents_Gen2">
+      <wsdl:input message="tns:GetLocalContents_Gen2HttpGetIn" />
+      <wsdl:output message="tns:GetLocalContents_Gen2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultContent">
+      <wsdl:input message="tns:GetDefaultContentHttpGetIn" />
+      <wsdl:output message="tns:GetDefaultContentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleDay">
+      <wsdl:input message="tns:GetScheduleDayHttpGetIn" />
+      <wsdl:output message="tns:GetScheduleDayHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="web_serviceHttpPost">
+    <wsdl:operation name="Update_Device_Info">
+      <wsdl:input message="tns:Update_Device_InfoHttpPostIn" />
+      <wsdl:output message="tns:Update_Device_InfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemaininglicenses">
+      <wsdl:input message="tns:GetRemaininglicensesHttpPostIn" />
+      <wsdl:output message="tns:GetRemaininglicensesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalLicenses">
+      <wsdl:input message="tns:GetTotalLicensesHttpPostIn" />
+      <wsdl:output message="tns:GetTotalLicensesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsForceWindowsUpdate">
+      <wsdl:input message="tns:GetIsForceWindowsUpdateHttpPostIn" />
+      <wsdl:output message="tns:GetIsForceWindowsUpdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsUpdateStatus">
+      <wsdl:input message="tns:GetWindowsUpdateStatusHttpPostIn" />
+      <wsdl:output message="tns:GetWindowsUpdateStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOSDetails">
+      <wsdl:input message="tns:SetOSDetailsHttpPostIn" />
+      <wsdl:output message="tns:SetOSDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="check_lid">
+      <wsdl:input message="tns:check_lidHttpPostIn" />
+      <wsdl:output message="tns:check_lidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVersion">
+      <wsdl:input message="tns:UpdateVersionHttpPostIn" />
+      <wsdl:output message="tns:UpdateVersionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Is_ActivationCodeInUse">
+      <wsdl:input message="tns:Is_ActivationCodeInUseHttpPostIn" />
+      <wsdl:output message="tns:Is_ActivationCodeInUseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OverrideActivationCode">
+      <wsdl:input message="tns:OverrideActivationCodeHttpPostIn" />
+      <wsdl:output message="tns:OverrideActivationCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="set_lid">
+      <wsdl:input message="tns:set_lidHttpPostIn" />
+      <wsdl:output message="tns:set_lidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="download_complete">
+      <wsdl:input message="tns:download_completeHttpPostIn" />
+      <wsdl:output message="tns:download_completeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="download_complete_NO_BandwidthUsage">
+      <wsdl:input message="tns:download_complete_NO_BandwidthUsageHttpPostIn" />
+      <wsdl:output message="tns:download_complete_NO_BandwidthUsageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_xml">
+      <wsdl:input message="tns:get_xmlHttpPostIn" />
+      <wsdl:output message="tns:get_xmlHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppVersion">
+      <wsdl:input message="tns:GetCurrentAppVersionHttpPostIn" />
+      <wsdl:output message="tns:GetCurrentAppVersionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppDownloadLink">
+      <wsdl:input message="tns:GetCurrentAppDownloadLinkHttpPostIn" />
+      <wsdl:output message="tns:GetCurrentAppDownloadLinkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerLink">
+      <wsdl:input message="tns:GetInstallerLinkHttpPostIn" />
+      <wsdl:output message="tns:GetInstallerLinkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateModified">
+      <wsdl:input message="tns:GetDateModifiedHttpPostIn" />
+      <wsdl:output message="tns:GetDateModifiedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceName">
+      <wsdl:input message="tns:GetDeviceNameHttpPostIn" />
+      <wsdl:output message="tns:GetDeviceNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpirationDate">
+      <wsdl:input message="tns:GetExpirationDateHttpPostIn" />
+      <wsdl:output message="tns:GetExpirationDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDateModified">
+      <wsdl:input message="tns:UpdateDateModifiedHttpPostIn" />
+      <wsdl:output message="tns:UpdateDateModifiedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceTimeZone">
+      <wsdl:input message="tns:UpdateDeviceTimeZoneHttpPostIn" />
+      <wsdl:output message="tns:UpdateDeviceTimeZoneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactInfo">
+      <wsdl:input message="tns:GetContactInfoHttpPostIn" />
+      <wsdl:output message="tns:GetContactInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogAppRequest">
+      <wsdl:input message="tns:LogAppRequestHttpPostIn" />
+      <wsdl:output message="tns:LogAppRequestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalContents_Gen2">
+      <wsdl:input message="tns:GetLocalContents_Gen2HttpPostIn" />
+      <wsdl:output message="tns:GetLocalContents_Gen2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultContent">
+      <wsdl:input message="tns:GetDefaultContentHttpPostIn" />
+      <wsdl:output message="tns:GetDefaultContentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleDay">
+      <wsdl:input message="tns:GetScheduleDayHttpPostIn" />
+      <wsdl:output message="tns:GetScheduleDayHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="web_serviceSoap" type="tns:web_serviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Update_Device_Info">
+      <soap:operation soapAction="http://tempuri.org/Update_Device_Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemaininglicenses">
+      <soap:operation soapAction="http://tempuri.org/GetRemaininglicenses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalLicenses">
+      <soap:operation soapAction="http://tempuri.org/GetTotalLicenses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsForceWindowsUpdate">
+      <soap:operation soapAction="http://tempuri.org/GetIsForceWindowsUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsUpdateStatus">
+      <soap:operation soapAction="http://tempuri.org/GetWindowsUpdateStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOSDetails">
+      <soap:operation soapAction="http://tempuri.org/SetOSDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="check_lid">
+      <soap:operation soapAction="http://tempuri.org/check_lid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVersion">
+      <soap:operation soapAction="http://tempuri.org/UpdateVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_ActivationCodeInUse">
+      <soap:operation soapAction="http://tempuri.org/Is_ActivationCodeInUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OverrideActivationCode">
+      <soap:operation soapAction="http://tempuri.org/OverrideActivationCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="set_lid">
+      <soap:operation soapAction="http://tempuri.org/set_lid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="download_complete">
+      <soap:operation soapAction="http://tempuri.org/download_complete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="download_complete_NO_BandwidthUsage">
+      <soap:operation soapAction="http://tempuri.org/download_complete_NO_BandwidthUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_xml">
+      <soap:operation soapAction="http://tempuri.org/get_xml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppVersion">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentAppVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppDownloadLink">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentAppDownloadLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerLink">
+      <soap:operation soapAction="http://tempuri.org/GetInstallerLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateModified">
+      <soap:operation soapAction="http://tempuri.org/GetDateModified" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceName">
+      <soap:operation soapAction="http://tempuri.org/GetDeviceName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpirationDate">
+      <soap:operation soapAction="http://tempuri.org/GetExpirationDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDateModified">
+      <soap:operation soapAction="http://tempuri.org/UpdateDateModified" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceTimeZone">
+      <soap:operation soapAction="http://tempuri.org/UpdateDeviceTimeZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactInfo">
+      <soap:operation soapAction="http://tempuri.org/GetContactInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAzureRequest">
+      <soap:operation soapAction="http://tempuri.org/LogAzureRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAppRequest">
+      <soap:operation soapAction="http://tempuri.org/LogAppRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalContents_Gen2">
+      <soap:operation soapAction="http://tempuri.org/GetLocalContents_Gen2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultContent">
+      <soap:operation soapAction="http://tempuri.org/GetDefaultContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleDay">
+      <soap:operation soapAction="http://tempuri.org/GetScheduleDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="web_serviceSoap12" type="tns:web_serviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Update_Device_Info">
+      <soap12:operation soapAction="http://tempuri.org/Update_Device_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemaininglicenses">
+      <soap12:operation soapAction="http://tempuri.org/GetRemaininglicenses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalLicenses">
+      <soap12:operation soapAction="http://tempuri.org/GetTotalLicenses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsForceWindowsUpdate">
+      <soap12:operation soapAction="http://tempuri.org/GetIsForceWindowsUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsUpdateStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetWindowsUpdateStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOSDetails">
+      <soap12:operation soapAction="http://tempuri.org/SetOSDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="check_lid">
+      <soap12:operation soapAction="http://tempuri.org/check_lid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVersion">
+      <soap12:operation soapAction="http://tempuri.org/UpdateVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_ActivationCodeInUse">
+      <soap12:operation soapAction="http://tempuri.org/Is_ActivationCodeInUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OverrideActivationCode">
+      <soap12:operation soapAction="http://tempuri.org/OverrideActivationCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="set_lid">
+      <soap12:operation soapAction="http://tempuri.org/set_lid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="download_complete">
+      <soap12:operation soapAction="http://tempuri.org/download_complete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="download_complete_NO_BandwidthUsage">
+      <soap12:operation soapAction="http://tempuri.org/download_complete_NO_BandwidthUsage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_xml">
+      <soap12:operation soapAction="http://tempuri.org/get_xml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppVersion">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentAppVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppDownloadLink">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentAppDownloadLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerLink">
+      <soap12:operation soapAction="http://tempuri.org/GetInstallerLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateModified">
+      <soap12:operation soapAction="http://tempuri.org/GetDateModified" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceName">
+      <soap12:operation soapAction="http://tempuri.org/GetDeviceName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpirationDate">
+      <soap12:operation soapAction="http://tempuri.org/GetExpirationDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDateModified">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDateModified" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceTimeZone">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDeviceTimeZone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetContactInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAzureRequest">
+      <soap12:operation soapAction="http://tempuri.org/LogAzureRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAppRequest">
+      <soap12:operation soapAction="http://tempuri.org/LogAppRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalContents_Gen2">
+      <soap12:operation soapAction="http://tempuri.org/GetLocalContents_Gen2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultContent">
+      <soap12:operation soapAction="http://tempuri.org/GetDefaultContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleDay">
+      <soap12:operation soapAction="http://tempuri.org/GetScheduleDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="web_serviceHttpGet" type="tns:web_serviceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Update_Device_Info">
+      <http:operation location="/Update_Device_Info" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemaininglicenses">
+      <http:operation location="/GetRemaininglicenses" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalLicenses">
+      <http:operation location="/GetTotalLicenses" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsForceWindowsUpdate">
+      <http:operation location="/GetIsForceWindowsUpdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsUpdateStatus">
+      <http:operation location="/GetWindowsUpdateStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOSDetails">
+      <http:operation location="/SetOSDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="check_lid">
+      <http:operation location="/check_lid" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVersion">
+      <http:operation location="/UpdateVersion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_ActivationCodeInUse">
+      <http:operation location="/Is_ActivationCodeInUse" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OverrideActivationCode">
+      <http:operation location="/OverrideActivationCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="set_lid">
+      <http:operation location="/set_lid" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="download_complete">
+      <http:operation location="/download_complete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="download_complete_NO_BandwidthUsage">
+      <http:operation location="/download_complete_NO_BandwidthUsage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_xml">
+      <http:operation location="/get_xml" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppVersion">
+      <http:operation location="/GetCurrentAppVersion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppDownloadLink">
+      <http:operation location="/GetCurrentAppDownloadLink" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerLink">
+      <http:operation location="/GetInstallerLink" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateModified">
+      <http:operation location="/GetDateModified" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceName">
+      <http:operation location="/GetDeviceName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpirationDate">
+      <http:operation location="/GetExpirationDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDateModified">
+      <http:operation location="/UpdateDateModified" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceTimeZone">
+      <http:operation location="/UpdateDeviceTimeZone" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactInfo">
+      <http:operation location="/GetContactInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAppRequest">
+      <http:operation location="/LogAppRequest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalContents_Gen2">
+      <http:operation location="/GetLocalContents_Gen2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultContent">
+      <http:operation location="/GetDefaultContent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleDay">
+      <http:operation location="/GetScheduleDay" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="web_serviceHttpPost" type="tns:web_serviceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Update_Device_Info">
+      <http:operation location="/Update_Device_Info" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemaininglicenses">
+      <http:operation location="/GetRemaininglicenses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalLicenses">
+      <http:operation location="/GetTotalLicenses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsForceWindowsUpdate">
+      <http:operation location="/GetIsForceWindowsUpdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowsUpdateStatus">
+      <http:operation location="/GetWindowsUpdateStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOSDetails">
+      <http:operation location="/SetOSDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="check_lid">
+      <http:operation location="/check_lid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVersion">
+      <http:operation location="/UpdateVersion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_ActivationCodeInUse">
+      <http:operation location="/Is_ActivationCodeInUse" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OverrideActivationCode">
+      <http:operation location="/OverrideActivationCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="set_lid">
+      <http:operation location="/set_lid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="download_complete">
+      <http:operation location="/download_complete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="download_complete_NO_BandwidthUsage">
+      <http:operation location="/download_complete_NO_BandwidthUsage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_xml">
+      <http:operation location="/get_xml" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppVersion">
+      <http:operation location="/GetCurrentAppVersion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAppDownloadLink">
+      <http:operation location="/GetCurrentAppDownloadLink" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallerLink">
+      <http:operation location="/GetInstallerLink" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateModified">
+      <http:operation location="/GetDateModified" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceName">
+      <http:operation location="/GetDeviceName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpirationDate">
+      <http:operation location="/GetExpirationDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDateModified">
+      <http:operation location="/UpdateDateModified" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceTimeZone">
+      <http:operation location="/UpdateDeviceTimeZone" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactInfo">
+      <http:operation location="/GetContactInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogAppRequest">
+      <http:operation location="/LogAppRequest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalContents_Gen2">
+      <http:operation location="/GetLocalContents_Gen2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultContent">
+      <http:operation location="/GetDefaultContent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleDay">
+      <http:operation location="/GetScheduleDay" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="web_service">
+    <wsdl:port name="web_serviceSoap" binding="tns:web_serviceSoap">
+      <soap:address location="http://qadigitalb360.eview360.net/portal/web_service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="web_serviceSoap12" binding="tns:web_serviceSoap12">
+      <soap12:address location="http://qadigitalb360.eview360.net/portal/web_service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="web_serviceHttpGet" binding="tns:web_serviceHttpGet">
+      <http:address location="http://qadigitalb360.eview360.net/portal/web_service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="web_serviceHttpPost" binding="tns:web_serviceHttpPost">
+      <http:address location="http://qadigitalb360.eview360.net/portal/web_service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
